@@ -22,7 +22,8 @@ public class InterfaceJava extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("Css/MyStyle.css");
+        scene.getStylesheets().add("Css/Button.css");
+        scene.getStylesheets().add("Css/TabPane.css");
         stage.setScene(scene);
         stage.show();
     }

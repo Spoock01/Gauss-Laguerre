@@ -1,0 +1,35 @@
+.root{
+    -fx-font-size  : 12pt;
+    -fx-font-family: "Roboto";
+    -fx-base       : white; //Botões e Barra da Tabela
+    -fx-background : white; //Fundo
+    -fx-font-width: bold;
+}
+
+.button{
+    -fx-text-fill    : white; // Cor do texto dos botões
+    -fx-border-color : black;
+    -fx-border-radius: 4;
+    -fx-padding      : 3 6 6 6;
+    -fx-base:#CB9BD8;
+}
+
+.tab-pane *.tab-header-area *.tab-header-background {
+  -fx-background-color:transparent;
+}
+
+.tab-pane {
+  -fx-tab-min-width:80px;
+  -fx-tab-max-width:80px;
+  -fx-tab-min-height:40px;
+  -fx-tab-max-height:40px;
+}
+
+
+.tab:selected {
+    -fx-background-color:#CB9BD8;
+}
+
+.tableview{
+    -fx-font-fill: red;
+}

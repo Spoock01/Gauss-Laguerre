@@ -71,6 +71,7 @@ public class FXMLDocumentController implements Initializable {
         
         //Apagando colunas que já vem no tableview
         tableView.getColumns().clear();
+        tableView.setPlaceholder(new Label("Insira os valores dos dois arrays, com cada valor separado por vírgula."));
         
         createColumns("N");
         createColumns("Xi");
@@ -94,6 +95,7 @@ public class FXMLDocumentController implements Initializable {
         t.setStyle( "-fx-alignment: CENTER;");
 
         tableView.getColumns().add(t);
+        
             
     }
 
