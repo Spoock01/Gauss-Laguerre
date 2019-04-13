@@ -50,7 +50,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
 
-        data.add(new Person("Valor1", "Valor2", "Valor3"));
+        data.add(new Data("Valor1", "Valor2", "Valor3"));
        
         tableView.setItems(data);
         
@@ -98,6 +98,6 @@ public class FXMLDocumentController implements Initializable {
     }
 
 
-    ObservableList<Person> data = FXCollections.observableArrayList();
+    ObservableList<Data> data = FXCollections.observableArrayList();
     
 }

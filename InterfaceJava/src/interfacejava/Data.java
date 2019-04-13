@@ -12,12 +12,12 @@ import javafx.beans.property.StringProperty;
  *
  * @author Joao
  */
-public class Person {
+public class Data {
     private final SimpleStringProperty prop1;
     private final SimpleStringProperty prop2;
     private final SimpleStringProperty prop3;
 
-    public Person(String fName, String lName, String email) {
+    public Data(String fName, String lName, String email) {
         this.prop1 = new SimpleStringProperty(fName);
         this.prop2 = new SimpleStringProperty(lName);
         this.prop3 = new SimpleStringProperty(email);
