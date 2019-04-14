@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package interfacejava;
 
 import javafx.application.Application;
@@ -11,10 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Joao
- */
 public class InterfaceJava extends Application {
     
     @Override
@@ -22,7 +13,7 @@ public class InterfaceJava extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("Css/Button.css");
+//        scene.getStylesheets().add("Css/Button.css");
         scene.getStylesheets().add("Css/TabPane.css");
         stage.setScene(scene);
         stage.show();

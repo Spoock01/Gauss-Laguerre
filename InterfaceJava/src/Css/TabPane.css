@@ -25,7 +25,6 @@
   -fx-tab-max-height:40px;
 }
 
-
 .tab:selected {
     -fx-background-color:#CB9BD8;
 }

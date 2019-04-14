@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package interfacejava;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,16 +11,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.Callback;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author Joao
- */
 public class FXMLDocumentController implements Initializable {
     
     private final int MAX_COLUMN_SIZE = 10;
@@ -50,11 +36,34 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
 
-        data.add(new Data("Valor1", "Valor2", "Valor3"));
-       
-        tableView.setItems(data);
+//        data.add(new Data("Valor1", "Valor2", "Valor3"));
+//        tableView.setItems(data);
+        ArrayList<String> array1 = new ArrayList<>();
+        ArrayList<String> array2 = new ArrayList<>();
         
-        System.out.println("inserindo");
+        String[] split1 = txtFieldArray1.getText().split(",");
+        String[] split2 = txtFieldArray1.getText().split(",");
+        
+        System.out.println(split1.length + " " + split2.length);
+        
+        if(txtFieldArray1.getText().isEmpty() || txtFieldArray2.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Insira valores nos campos.");
+            return;
+        }        
+        
+        if((split1.length == split2.length) && (split1.length <= 5)){
+            for (int i = 0; i < split1.length; i++){
+                try{
+                    Float.parseFloat(split1[i]);
+                    Float.parseFloat(split2[i]);
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, "Digite apenas números.");
+                }
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Quantidade de valores incorreta.");
+        }
+        
     }
     
     @FXML
@@ -93,13 +102,7 @@ public class FXMLDocumentController implements Initializable {
         t.setSortable(false);
         t.setMinWidth(300);
         t.setStyle( "-fx-alignment: CENTER;");
-
         tableView.getColumns().add(t);
-        
-            
     }
-
-
     ObservableList<Data> data = FXCollections.observableArrayList();
-    
 }
