@@ -6,7 +6,13 @@ import sys
 
 N = 0
 
-if len(sys.argv) >= 1:
+def integrandEquacao1(x):
+    return math.cos(x) * math.exp(-x)
+
+def integrandEquacao2(x):
+    return math.exp(-x) * ((x + 1)**2) * math.exp(-1)
+
+if len(sys.argv) > 2:
     N = int(sys.argv[1])
 
 k = 1
@@ -22,21 +28,16 @@ for i in range(1, N + 1):
 
 sample_points, weight_points = qdt.laggauss(N)
 
-def integrand(x):
-    return math.sin(x) * math.exp(-x) * 4
-
-
-print('Real:', quad(integrand, 0, np.inf)[0])
-
-# print('\n\n\nSample points: ', sample_points)
-# print('weight points: ', weight_points)
-
 mysum = 0
 
-for i in range(N):
-    # print('Sin({}) * Weight({}) * 4'.format(sample_points[i], weight_points[i]))
-    mysum += math.sin(sample_points[i]) * weight_points[i] * 4
+if int(sys.argv[2]) == 1:
+	print('Real:', quad(integrandEquacao1, 0, np.inf)[0])
+	for i in range(N):
+		mysum += math.cos(sample_points[i]) * weight_points[i]
+
+elif int(sys.argv[2]) == 2:
+	print('Real:', quad(integrandEquacao2, 0, np.inf)[0])
+	for i in range(N):
+		mysum += ((sample_points[i] + 1)**2) * weight_points[i] * math.exp(-1)
 
 print('Laguerre:', mysum)
-
-
