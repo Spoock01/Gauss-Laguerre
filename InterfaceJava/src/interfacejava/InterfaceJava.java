@@ -15,10 +15,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Joao
- */
+
 public class InterfaceJava extends Application {
     
     @Override
