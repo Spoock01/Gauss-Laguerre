@@ -9,29 +9,24 @@ N = 0
 if len(sys.argv) >= 1:
     N = int(sys.argv[1])
 
+k = 1
+for i in range(1, N + 1):
+	sample_points, weight_points = qdt.laggauss(i)
+	for j in range(i):
+		if j == 0:
+			print("{},{},{}".format(k, sample_points[j], weight_points[j]))
+		else:
+			print("{},{},{}".format('', sample_points[j], weight_points[j]))
+	k +=1
+
 
 sample_points, weight_points = qdt.laggauss(N)
-
-# print('Sample points', sample_points)
-# print('Weight points', weight_points)
-#
-# custom_pts = qdt.lagweight(np.array(ar))
-# print('Custom points', custom_pts)
-# #
-# # for i in range(len(custom_pts)):
-# #     print(-custom_pts[i] + sample_points[i])
-#
-# print(np.exp(-0.8776120886911798))
-# #
-# #
-# # print(math.log(0.41577456))
-
 
 def integrand(x):
     return math.sin(x) * math.exp(-x) * 4
 
 
-print('Resultado da integral: ', quad(integrand, 0, np.inf)[0])
+print('Real:', quad(integrand, 0, np.inf)[0])
 
 # print('\n\n\nSample points: ', sample_points)
 # print('weight points: ', weight_points)
@@ -42,6 +37,6 @@ for i in range(N):
     # print('Sin({}) * Weight({}) * 4'.format(sample_points[i], weight_points[i]))
     mysum += math.sin(sample_points[i]) * weight_points[i] * 4
 
-print('Resultado com GaussLaguerre: ', mysum)
+print('Laguerre:', mysum)
 
 

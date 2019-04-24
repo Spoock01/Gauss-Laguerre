@@ -10,31 +10,37 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="793.0" prefWidth="963.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfacejava.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="822.0" prefWidth="963.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfacejava.FXMLDocumentController">
     <children>
       <TabPane layoutX="7.0" layoutY="12.0" prefHeight="769.0" prefWidth="949.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Descrição">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="607.0" prefWidth="967.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="796.0" prefWidth="949.0" />
             </content>
           </Tab>
           <Tab text="Aplicação">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="715.0" prefWidth="904.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="787.0" prefWidth="949.0">
                      <children>
-                        <TextField id="txtField" fx:id="txtFieldArray1" layoutX="367.0" layoutY="26.0" promptText="1,2,3,4,5" />
-                        <Label layoutX="323.0" layoutY="30.0" text="Array1:" />
-                        <Button id="btnAction" layoutX="550.0" layoutY="38.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Gerar Tabela" />
-                        <TextField id="txtField" fx:id="txtFieldArray2" layoutX="367.0" layoutY="59.0" promptText="1,2,3,4,5" />
-                        <Label layoutX="323.0" layoutY="63.0" text="Array2:" />
+                        <TextField id="txtField" fx:id="txtFieldArray1" layoutX="367.0" layoutY="26.0" prefHeight="26.0" prefWidth="173.0" promptText="Valor &gt; 0" style="-fx-alignment: center;" />
+                        <Label layoutX="301.0" layoutY="30.0" text="Valor de N:" />
+                        <Button id="btnAction" layoutX="561.0" layoutY="23.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="102.0" text="Gerar Tabela" />
+                        <TextField id="txtField" fx:id="txtFieldArray2" layoutX="367.0" layoutY="59.0" prefHeight="26.0" prefWidth="174.0" promptText="Equação personalizada?" style="-fx-alignment: center;" />
+                        <Label layoutX="305.0" layoutY="63.0" text="Equação?" />
                         <Separator layoutX="14.0" layoutY="95.0" prefHeight="25.0" prefWidth="900.0" />
-                        <TableView id="tableView" fx:id="tableView" layoutX="14.0" layoutY="131.0" prefHeight="523.0" prefWidth="900.0">
+                        <TableView id="tableView" fx:id="tableView" layoutX="14.0" layoutY="131.0" prefHeight="520.0" prefWidth="900.0">
                           <columns>
                             <TableColumn prefWidth="75.0" visible="false" />
                           </columns>
                         </TableView>
-                        <Button fx:id="btnClear" layoutX="460.0" layoutY="667.0" mnemonicParsing="false" onAction="#btnClearAction" text="Clear" />
+                        <Label layoutX="40.0" layoutY="672.0" text="Equação:" />
+                        <Button fx:id="btnClear" layoutX="561.0" layoutY="59.0" mnemonicParsing="false" onAction="#btnClearAction" prefHeight="30.0" prefWidth="102.0" text="Limpar Tabela" />
+                        <TextField id="txtField" fx:id="txtEquacao" editable="false" layoutX="100.0" layoutY="672.0" prefHeight="26.0" prefWidth="173.0" style="-fx-alignment: center;" />
+                        <Label layoutX="305.5" layoutY="672.0" text="Resultado Real:" />
+                        <TextField id="txtField" fx:id="txtReal" editable="false" layoutX="406.5" layoutY="672.0" prefHeight="26.0" prefWidth="173.0" style="-fx-alignment: center;" />
+                        <Label layoutX="612.0" layoutY="672.0" text="Resultado Laguerre:" />
+                        <TextField id="txtField" fx:id="txtLaguerre" editable="false" layoutX="738.0" layoutY="672.0" prefHeight="26.0" prefWidth="173.0" style="-fx-alignment: center;" />
                      </children>
                   </AnchorPane>
             </content>
