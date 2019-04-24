@@ -100,21 +100,19 @@ public class FXMLDocumentController implements Initializable {
         try{
             n = Integer.parseInt(txtFieldArray1.getText().trim());
             
-            if(n <= 0){
+            if(n <= 0 || n > 100){
                 throw new NumberFormatException();
             }
         }catch(NumberFormatException nfe){
-            JOptionPane.showMessageDialog(null, "Deve ser digitado um valor numérico maior que ZERO.");
+            JOptionPane.showMessageDialog(null, "Deve ser digitado um valor numérico entre 1 e 100.");
             return;
         }
         
         if(!data.isEmpty()){
             btnClearAction(event);
-            System.out.println("Cleaning");
         }
         
         try {
-            System.out.println("Running python code");
             Process p = Runtime.getRuntime().exec("python src/PythonCode/GaussLaguerre.py " + n + " " + equacao);
             
             BufferedReader br;
@@ -195,7 +193,7 @@ public class FXMLDocumentController implements Initializable {
         createColumns("Wi");
         
         
-    comboBox.setItems(FXCollections.observableArrayList("IntegralOf e^-x * cos(x)",
+        comboBox.setItems(FXCollections.observableArrayList("IntegralOf e^-x * cos(x)",
             "e^-1 IntegralOf e^-x * (x + 1)^2"));
         
     }
