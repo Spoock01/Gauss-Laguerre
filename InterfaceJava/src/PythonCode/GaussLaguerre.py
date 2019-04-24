@@ -1,10 +1,14 @@
 import numpy.polynomial.laguerre as qdt
 import numpy as np
 import math
-import math.exp as exp
-from scipy.integrate import quad
+from scipy.integrate.quadpack import quad
+import sys
 
-N = 6
+N = 0
+
+if len(sys.argv) >= 1:
+    N = int(sys.argv[1])
+
 
 sample_points, weight_points = qdt.laggauss(N)
 
@@ -24,7 +28,7 @@ sample_points, weight_points = qdt.laggauss(N)
 
 
 def integrand(x):
-    return math.sin(x) * exp(-x) * 4
+    return math.sin(x) * math.exp(-x) * 4
 
 
 print('Resultado da integral: ', quad(integrand, 0, np.inf)[0])
